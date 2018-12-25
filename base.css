@@ -1,0 +1,18 @@
+table{
+    border-collapse: collapse;
+    height : 5px;
+    width : 500px;
+}
+
+.show-none{
+    display: none;
+}
+line{
+    stroke: #db2500;
+    stroke-width: 5;
+}
+circle{
+    fill:none;
+    stroke: #6162cd;
+    stroke-width: 5;
+}
