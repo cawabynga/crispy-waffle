@@ -8,11 +8,37 @@ table{
     display: none;
 }
 line{
-    stroke: #db2500;
+    stroke: rgba(203, 203, 0, 0.64);
     stroke-width: 5;
 }
 circle{
     fill:none;
-    stroke: #6162cd;
+    stroke: #a8a8d5;
     stroke-width: 5;
+}
+
+.banner_1{
+    position: fixed;
+    left: 25%;
+    top: 25%;
+    font-size: large;
+    border :  10px solid #b9d7db;
+    height: 50%;
+    width: 50%;
+    text-align: center;
+    vertical-align: middle;
+    background-image: linear-gradient(to bottom, #8cb3cc, #CC8B99);
+}
+
+.banner_2{
+    position: fixed;
+    left: 25%;
+    top: 25%;
+    font-size: large;
+    border :  10px solid #b9d7db;
+    height: 50%;
+    width: 50%;
+    text-align: center;
+    vertical-align: middle;
+    background-image: linear-gradient(to bottom, #8cb3cc, #CC8B99);
 }
