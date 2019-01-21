@@ -13,7 +13,6 @@ line {
     stroke: rgba(203, 203, 0, 0.64);
     stroke-width: 5;
 }
-
 circle {
     fill: none;
     stroke: #a8a8d5;
@@ -33,7 +32,6 @@ circle {
     vertical-align: middle;
     background-image: linear-gradient(to bottom, #8cb3cc, #CC8B99);
 }
-
 .banner_2 {
     position: fixed;
     left: 25%;

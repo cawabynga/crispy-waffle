@@ -3,7 +3,7 @@
 // 3 4 5
 // 6 7 8
 // 0 - ничего 1- крест 2- нолик
-var end_of_game = 0;
+
 var win = function (conditions) {
     if ((conditions[0] === conditions[1]) && (conditions[1] === conditions[2]) && (conditions[0] !== 0)) {
         end_of_game = 1;
@@ -47,7 +47,7 @@ var draw = function (conditions) {
 var addThumbnailClickHandler = function (thumbnail, n) {
     thumbnail.addEventListener('click', function () {
         console.log(n + ' сработал');
-        if (step === 1 && end_of_game === 0 && condition[n] === 0) {
+        if (step % 2 === 1 && end_of_game === 0 && condition[n] === 0) {
             crosses[2 * n].classList.remove("show-none");
             crosses[2 * n + 1].classList.remove("show-none");
             condition[n] = 1;
@@ -61,7 +61,11 @@ var addThumbnailClickHandler = function (thumbnail, n) {
                 banner3.classList.remove("show-none");
                 end_of_game = 1;
             }
-            step++
+            if (winning(condition, step)[1]){
+                nots[winning(condition, step)[2]].classList.remove("show-none");
+                condition[winning(condition, step)[2]] = 2;
+            }
+            step ++
         } else if (condition[n] === 0 && end_of_game === 0) {
             nots[n].classList.remove("show-none");
             condition[n] = 2;
@@ -70,16 +74,18 @@ var addThumbnailClickHandler = function (thumbnail, n) {
                 var banner2 = document.querySelector('.banner_2');
                 banner2.classList.remove("show-none");
             }
-            step -= 1;
+            winning(condition, step);
+            step ++;
         }
     });
 };
+
+var end_of_game = 0;
 var condition = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 var step = 1;
 var thumbnails = document.querySelectorAll('td');
 var crosses = document.querySelectorAll('.part-cross');
 var nots = document.querySelectorAll('.circle');
-
 
 for (var i = 0; i < thumbnails.length; i++) {
     addThumbnailClickHandler(thumbnails[i], i);
