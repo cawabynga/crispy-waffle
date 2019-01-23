@@ -1,0 +1,3 @@
+var winning = function (conditions) {
+    
+};

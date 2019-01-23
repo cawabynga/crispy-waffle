@@ -61,11 +61,8 @@ var addThumbnailClickHandler = function (thumbnail, n) {
                 banner3.classList.remove("show-none");
                 end_of_game = 1;
             }
-            if (winning(condition, step)[1]){
-                nots[winning(condition, step)[2]].classList.remove("show-none");
-                condition[winning(condition, step)[2]] = 2;
-            }
-            step ++
+
+            step++
         } else if (condition[n] === 0 && end_of_game === 0) {
             nots[n].classList.remove("show-none");
             condition[n] = 2;
@@ -74,8 +71,8 @@ var addThumbnailClickHandler = function (thumbnail, n) {
                 var banner2 = document.querySelector('.banner_2');
                 banner2.classList.remove("show-none");
             }
-            winning(condition, step);
-            step ++;
+
+            step++;
         }
     });
 };
